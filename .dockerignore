@@ -1,0 +1,13 @@
+db.sqlite3
+sql_queries.log
+venv/
+
+# Exclude Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude version control directories
+.git
+.gitignore

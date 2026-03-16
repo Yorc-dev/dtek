@@ -1,0 +1,355 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-22 11:17+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: apps/account/choices.py:6
+msgid "Директор"
+msgstr ""
+
+#: apps/account/choices.py:7
+msgid "Начальник управления"
+msgstr ""
+
+#: apps/account/choices.py:8
+msgid "Специалист"
+msgstr ""
+
+#: apps/account/choices.py:9
+msgid "Общий отдел"
+msgstr ""
+
+#: apps/account/models.py:19
+msgid "Название услуги"
+msgstr ""
+
+#: apps/account/models.py:29
+msgid "email"
+msgstr ""
+
+#: apps/account/models.py:30
+msgid "Имя"
+msgstr ""
+
+#: apps/account/models.py:31
+msgid "Фамилия"
+msgstr ""
+
+#: apps/account/models.py:33
+msgid "Отчество"
+msgstr ""
+
+#: apps/account/models.py:39
+msgid "Роль сотрудника"
+msgstr ""
+
+#: apps/account/models.py:47
+msgid "Услуга"
+msgstr ""
+
+#: apps/account/models.py:49
+msgid "Статус сотрудника"
+msgstr ""
+
+#: apps/account/models.py:57 apps/account/models.py:70
+msgid "Сотрудник"
+msgstr ""
+
+#: apps/account/models.py:58
+msgid "Сотрудники"
+msgstr ""
+
+#: apps/account/models.py:71
+msgid "Токен для сброса"
+msgstr ""
+
+#: apps/account/models.py:72
+msgid "Дата создания"
+msgstr ""
+
+#: apps/account/models.py:78
+msgid "Токен для восстановления пароля"
+msgstr ""
+
+#: apps/account/models.py:79
+msgid "Токены для восстановления пароля"
+msgstr ""
+
+#: apps/application/choices.py:6
+msgid "Физ. лицо"
+msgstr ""
+
+#: apps/application/choices.py:7
+msgid "Юр. лицо"
+msgstr ""
+
+#: apps/application/choices.py:11
+msgid "Создано"
+msgstr ""
+
+#: apps/application/choices.py:12
+msgid "Принято на рассмотрение"
+msgstr ""
+
+#: apps/application/choices.py:13
+msgid "Одобрено"
+msgstr ""
+
+#: apps/application/choices.py:14
+msgid "отказано"
+msgstr ""
+
+#: apps/application/models.py:24 apps/license_template/models.py:20
+#: apps/license_template/models.py:33 apps/license_template/models.py:80
+msgid "Тип лицензии"
+msgstr ""
+
+#: apps/application/models.py:27
+msgid "Название организации"
+msgstr ""
+
+#: apps/application/models.py:29
+msgid "Статус заявителя"
+msgstr ""
+
+#: apps/application/models.py:32
+msgid "Почта"
+msgstr ""
+
+#: apps/application/models.py:34
+msgid "Номер телефона"
+msgstr ""
+
+#: apps/application/models.py:38
+msgid "Другие сведения"
+msgstr ""
+
+#: apps/application/models.py:39
+msgid "ФИО заявителя"
+msgstr ""
+
+#: apps/application/models.py:41
+msgid "Организационно правовая форма"
+msgstr ""
+
+#: apps/application/models.py:45
+msgid "Форма собственности"
+msgstr ""
+
+#: apps/application/models.py:46
+msgid "Юридический адрес"
+msgstr ""
+
+#: apps/application/models.py:47
+msgid "Фактический адрес"
+msgstr ""
+
+#: apps/application/models.py:49
+msgid "ИНН"
+msgstr ""
+
+#: apps/application/models.py:54
+msgid "Код ОКПО"
+msgstr ""
+
+#: apps/application/models.py:55
+msgid "Дата регистрации юр.лица"
+msgstr ""
+
+#: apps/application/models.py:56
+msgid "Дата заполнения"
+msgstr ""
+
+#: apps/application/models.py:57
+msgid "ФИО руководителя"
+msgstr ""
+
+#: apps/application/models.py:59
+msgid "Дата подписания заявки"
+msgstr ""
+
+#: apps/application/models.py:63
+msgid "Срок рассмотрения"
+msgstr ""
+
+#: apps/application/models.py:66
+msgid "Дата фактического рассмотрения"
+msgstr ""
+
+#: apps/application/models.py:70
+msgid "Статус заявки"
+msgstr ""
+
+#: apps/application/models.py:81 apps/application/models.py:93
+#: apps/document/models.py:55 apps/license_template/models.py:67
+msgid "Заявка"
+msgstr ""
+
+#: apps/application/models.py:82
+msgid "Заявки"
+msgstr ""
+
+#: apps/application/models.py:99
+msgid "Назначенные сотрудники"
+msgstr ""
+
+#: apps/application/models.py:107
+msgid "Принятая на рассмотрение заявка"
+msgstr ""
+
+#: apps/application/models.py:108
+msgid "Принятые на рассмотрение заявки"
+msgstr ""
+
+#: apps/application/validators.py:7
+msgid ""
+"Номер телефона должен быть заполнен в формате: 996*********** Разрешено до 9 "
+"символов после кода страны."
+msgstr ""
+
+#: apps/document/models.py:15
+msgid "Поле к которому нужно прикрепить пример документа"
+msgstr ""
+
+#: apps/document/models.py:17 apps/document/models.py:23
+msgid "Пример документа"
+msgstr ""
+
+#: apps/document/models.py:24
+msgid "Примеры документов"
+msgstr ""
+
+#: apps/document/models.py:28 apps/document/models.py:31
+#: apps/document/models.py:62 apps/license_template/choices.py:9
+msgid "Документ"
+msgstr ""
+
+#: apps/document/models.py:32
+msgid "Документы"
+msgstr ""
+
+#: apps/document/models.py:41 apps/license_template/models.py:73
+msgid "Поле"
+msgstr ""
+
+#: apps/document/models.py:48 apps/license_template/models.py:99
+msgid "Шаблон"
+msgstr ""
+
+#: apps/document/models.py:66
+msgid "Шаблон документа"
+msgstr ""
+
+#: apps/document/models.py:67
+msgid "Шаблоны документов"
+msgstr ""
+
+#: apps/license_template/choices.py:6
+msgid "Текст"
+msgstr ""
+
+#: apps/license_template/choices.py:7
+msgid "Число"
+msgstr ""
+
+#: apps/license_template/choices.py:8
+msgid "Булевое"
+msgstr ""
+
+#: apps/license_template/models.py:13
+msgid "Название"
+msgstr ""
+
+#: apps/license_template/models.py:14
+msgid "Описание"
+msgstr ""
+
+#: apps/license_template/models.py:21
+msgid "Типы лицензий"
+msgstr ""
+
+#: apps/license_template/models.py:28
+msgid "Название шаблона лицензии"
+msgstr ""
+
+#: apps/license_template/models.py:40
+msgid "Шаблон лицензии"
+msgstr ""
+
+#: apps/license_template/models.py:41
+msgid "Шаблоны лицензий"
+msgstr ""
+
+#: apps/license_template/models.py:48
+msgid "Название поля"
+msgstr ""
+
+#: apps/license_template/models.py:49
+msgid "Тип данных поля"
+msgstr ""
+
+#: apps/license_template/models.py:55
+msgid "Поле шаблона лицензии"
+msgstr ""
+
+#: apps/license_template/models.py:56
+msgid "Поля шаблонов лицензий"
+msgstr ""
+
+#: apps/license_template/models.py:75
+msgid "Значение"
+msgstr ""
+
+#: apps/license_template/models.py:87
+msgid "Значение поля шаблона лицензии"
+msgstr ""
+
+#: apps/license_template/models.py:88
+msgid "Значения полей шаблонов лицензий"
+msgstr ""
+
+#: apps/license_template/models.py:105
+msgid "Поля"
+msgstr ""
+
+#: apps/license_template/models.py:107
+msgid "Порядок"
+msgstr ""
+
+#: apps/license_template/models.py:111
+msgid "Статичное поле"
+msgstr ""
+
+#: apps/license_template/models.py:112
+msgid "Описание для поля"
+msgstr ""
+
+#: apps/license_template/models.py:115 apps/license_template/models.py:116
+msgid "Порядок полей шаблона лицензии"
+msgstr ""
+
+#: core/settings.py:127
+msgid "Русский"
+msgstr ""
+
+#: core/settings.py:128
+msgid "Кыргызский"
+msgstr ""
+
+#: core/settings.py:129
+msgid "Английский"
+msgstr ""

@@ -1,0 +1,92 @@
+version: '3.8'
+
+services:
+  apps:
+    image: registry.gitlab.com/yorc/dtek_is-backend:backend_master
+    command: sh -c "
+                    chmod +x entrypoint.sh &&
+                    sh entrypoint.sh"
+    volumes:
+      - ./backend:/backend:delegated
+      - media_volume:/usr/src/app/media
+      - static_volume:/usr/src/app/static
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - db
+    networks:
+      dtek-back:
+        aliases:
+          - backend.lan
+
+  # client:
+  #   image: registry.gitlab.com/yorc/dtek_is:client_dev
+  #   container_name: dtec_front_client
+  #   restart: always
+  #   ports:
+  #     - '3045:3000'
+  #   networks:
+  #     nginx:
+  #       aliases:
+  #         - nginx.lan
+  # crm:
+  #   image: registry.gitlab.com/yorc/dtek_is:crm_dev
+  #   container_name: dtec_front_crm
+  #   restart: always
+  #   ports:
+  #     - '3044:80'
+  #   networks:
+  #     nginx:
+  #       aliases:
+  #         - nginx.lan
+
+
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env.db
+    networks:
+      dtek-back:
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis-data:/data
+    expose:
+      - 6379
+    networks:
+      dtek-back:
+
+
+  celery:
+    image: registry.gitlab.com/yorc/dtek_is-backend:backend_master
+    command: [ "celery", "-A", "core", "worker", "--loglevel=info" ]
+    volumes:
+      - ./:/usr/src/app/
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    networks:
+      dtek-back:
+
+
+
+volumes:
+  postgres_data:
+  redis-data:
+  static_volume:
+  media_volume:
+  
+networks:
+  dtek-back:
+    name: dtek-net
+    external: true
+  # nginx:
+  #   name: dtek-net
+  #   external: true
