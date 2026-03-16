@@ -3,6 +3,7 @@ from apps.application.models import Application
 from apps.integration.sedo import send_document, prepare_file_payload, build_document_payload
 from apps.application.utils import render_application_to_docx
 from django.conf import settings
+from django.db.models import Q
 # from apps.license_template.services import OrganizationService, ApplicationService, LicenseService
 from apps.license_template.models import LicenseType
 import pandas as pd
@@ -56,6 +57,38 @@ def send_application_docx_task(self, app_id):
 
     except Exception as e:
         self.retry(exc=e, countdown=60)
+
+
+@shared_task
+def generate_license_document_task(license_id):
+    """Генерирует и сохраняет документ лицензии."""
+    from apps.license_template.utils import save_license_docx
+    try:
+        license_obj = License.objects.select_related('application').get(id=license_id)
+    except License.DoesNotExist:
+        return
+    save_license_docx(license_obj, license_obj.application)
+
+
+@shared_task
+def enqueue_applications_without_sedo_code():
+    """Каждые 6 часов: ставит в очередь отправку заявок без номера СЭД."""
+    app_ids = Application.objects.filter(
+        Q(sedo_code__isnull=True) | Q(sedo_code='')
+    ).values_list('id', flat=True).iterator()
+    for app_id in app_ids:
+        send_application_docx_task.delay(app_id)
+
+
+@shared_task
+def enqueue_licenses_without_document():
+    """Каждый 1 час: ставит в очередь генерацию документов для лицензий без документа."""
+    license_ids = License.objects.filter(
+        Q(document__isnull=True) | Q(document='')
+    ).values_list('id', flat=True).iterator()
+    for license_id in license_ids:
+        generate_license_document_task.delay(license_id)
+
 
 # @shared_task
 # def parsing_row(_, row):
