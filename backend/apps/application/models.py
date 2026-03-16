@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 from django.utils.translation import gettext_lazy as _
@@ -91,6 +92,13 @@ class Application(
         null=True, blank=True,
         related_name="approved_applications_as_director",
         verbose_name=_('Одобрено директором')
+    )
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True, blank=True,
+        related_name='authored_applications',
+        verbose_name=_('Автор заявки')
     )
     track_with_signal = True
     signature = models.CharField(_('Подпись'), max_length=500, blank=True, null=True)

@@ -96,13 +96,20 @@ class ApplicationSerializer(serializers.ModelSerializer):
             'payment_receipts',
             'organization',
             'application_type',
-            'cause'
+            'cause',
+            'author_id',
             ]
+        read_only_fields = ['author_id']
         
     def create(self, validated_data):
         request = self.context.get('request')
         if request and hasattr(request.user, 'inn'):
             validated_data['organization'] = request.user
+
+        if request and getattr(request.user, 'is_staff', False):
+            validated_data['author'] = request.user
+        else:
+            validated_data.pop('author', None)
 
         return super().create(validated_data)
         
@@ -143,7 +150,8 @@ class ApplicationDetailSerializer(serializers.ModelSerializer):
             'application_type',
             'sedo_code',
             'cause',
-            'licenses'
+            'licenses',
+            'author_id',
             ]
         
     def get_licenses(self, obj):
